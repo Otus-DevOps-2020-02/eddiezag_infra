@@ -1,3 +1,5 @@
+#!/usr/bin/ruby
+
 import unittest
 
 class NumbersTest(unittest.TestCase):
