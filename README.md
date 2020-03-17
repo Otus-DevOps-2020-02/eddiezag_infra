@@ -22,4 +22,4 @@ host someinternalhost
  IdentityFile ~/.ssh/appuser
 
 На виртуальной машине bastion установил pritunl
-тунель поднялся доступ к someinternalhost получил.
+тунель поднялся доступ к someinternalhost получил from local machine.
