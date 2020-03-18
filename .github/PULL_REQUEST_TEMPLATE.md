@@ -26,7 +26,7 @@ host someinternalhost
 
 
 ## Как запустить проект:
- setupvpn.sh
+ sudo bash setupvpn.sh
 
 ## Как проверить работоспособность:
  https://35.206.154.52
