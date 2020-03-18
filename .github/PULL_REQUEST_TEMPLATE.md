@@ -6,21 +6,14 @@
 ## В процессе сделано:
 
 Созданы две виртуальные машины
-
+```
 bastion_IP = 35.206.154.52
-
 someinternalhost_IP = 10.132.0.6
-
-Прописал в /etc/hosts внутренний IP bastion 10.132.0.5
+```
 
 Создал файл в домашней директории /.ssh/conf с содержимым ниже
 
 ```
-#For bastion connections
-Host bastion
-  Preferredauthentications publickey
-  IdentityFile ~/.ssh/appuser
-
 #For connection from local machine
 host someinternalhost
  HostName 10.132.0.6
