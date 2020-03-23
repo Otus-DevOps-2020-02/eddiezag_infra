@@ -11,7 +11,7 @@ reddit-app_IP = 34.91.233.99
 reddit-app_port = 9292
 ```
 
-# Create Firewall Rule
+# Create Firewall Rule from remote console
 
 ```
 gcloud compute --project=infra-271209 firewall-rules create default-puma-server --direction=INGRESS --priority=1000 --network=defaul$
@@ -34,7 +34,7 @@ startup_script.sh
 ```
 
 ## Как запустить проект:
-# Lanch bellow command to create instance
+# Lanch bellow command to create VM instance
 ```
 /snap/bin/gcloud compute instances create reddit-app\
   --boot-disk-size=10GB \
