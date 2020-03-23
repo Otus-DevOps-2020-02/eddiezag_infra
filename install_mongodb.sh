@@ -1,4 +1,4 @@
-#! /bin/bash
+#!/bin/bash
 
 #Install MongoDB
 sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv D68FA50FEA312927
