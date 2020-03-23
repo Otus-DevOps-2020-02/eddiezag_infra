@@ -3,8 +3,8 @@ eddiezag Infra repository
 
 #IP for reddit-app
 ```
-reddit-app_IP = 34.91.233.99
-reddit-app_port = 9292
+testapp-app_IP = 34.91.233.99
+testapp-app_port = 9292
 ```
 
 # Create Firewall Rule
