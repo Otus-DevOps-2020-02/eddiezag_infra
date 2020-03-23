@@ -1,4 +1,4 @@
-# Выполнено ДЗ № 3
+# Выполнено ДЗ № 6
 
  - [x] Основное ДЗ
  - [x] Задание со *
@@ -14,7 +14,7 @@ reddit-app_port = 9292
 # Create Firewall Rule
 
 ```
-gcloud compute --project=infra-271209 firewall-rules create puma-server --direction=INGRESS --priority=1000 --network=defaul$
+gcloud compute --project=infra-271209 firewall-rules create default-puma-server --direction=INGRESS --priority=1000 --network=defaul$
 ```
 #Added bucket on GCP and script
 
