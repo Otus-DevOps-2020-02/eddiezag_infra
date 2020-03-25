@@ -15,7 +15,7 @@ gcloud compute --project=infra-271209 firewall-rules create default-puma-server 
 #Added bucket on GCP and script
 
 ```
-sudo bash startup_script.sh
+https://storage.cloud.google.com/reddit-app-scripts/startup_script.sh
 ```
 # Deploy VM instance including script
 ```
