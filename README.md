@@ -1,13 +1,6 @@
 # eddiezag_infra
 eddiezag Infra repository
 
-# Выполнено ДЗ № 6
-
- - [x] Основное ДЗ
- - [x] Задание со *
-
-## В процессе сделано:
-
 #IP for reddit-app
 ```
 testapp_IP = 34.91.233.99
@@ -36,7 +29,6 @@ startup_script.sh
   --restart-on-failure
 ```
 
-## Как запустить проект:
 # Lanch bellow command to create VM instance
 ```
 /snap/bin/gcloud compute instances create reddit-app\
