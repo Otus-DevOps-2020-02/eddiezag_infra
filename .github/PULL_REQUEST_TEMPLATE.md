@@ -1,40 +1,54 @@
-# Выполнено ДЗ № 3
+# Выполнено ДЗ № 6
 
  - [x] Основное ДЗ
- - [ ] Задание со *
+ - [x] Задание со *
 
 ## В процессе сделано:
 
-Созданы две виртуальные машины
+#IP for reddit-app
+```
+testapp_IP = 34.91.233.99
+testapp_port = 9292
+```
 
-bastion_IP = 35.206.154.52
-someinternalhost_IP = 10.132.0.6
+# Create Firewall Rule from remote console
 
-Прописал в /etc/hosts внутренний IP bastion 10.132.0.5
-Создал файл в домашней директории /.ssh/conf с содержимым ниже
+```
+gcloud compute --project=infra-271209 firewall-rules create default-puma-server --allow=tcp:9292 --target-tags=puma-server --direction=INGRESS --priority=1000 --network=default
+```
+#Added bucket on GCP and script
 
-#For bastion connections
-Host bastion
-  Preferredauthentications publickey
-  IdentityFile ~/.ssh/appuser
-
-#For connection from local machine
-host someinternalhost
- HostName 10.132.0.6
- ProxyJump appuser@35.206.154.52:22
- User appuser
- IdentityFile ~/.ssh/appuser
-
-На виртуальной машине bastion установил pritunl
-тунель поднялся доступ к someinternalhost получил.
-
+```
+startup_script.sh
+```
+# Deploy VM instance including script
+```
+/snap/bin/gcloud compute instances create reddit-app\
+  --boot-disk-size=10GB \
+  --image-family ubuntu-1604-lts \
+  --image-project=ubuntu-os-cloud \
+  --machine-type=g1-small \
+  --tags puma-server,http-server,https-server \
+  --metadata startup-script-url=gs://reddit-app-scripts/startup_script.sh\
+  --restart-on-failure
+```
 
 ## Как запустить проект:
- setupvpn.sh
+# Lanch bellow command to create VM instance
+```
+/snap/bin/gcloud compute instances create reddit-app\
+  --boot-disk-size=10GB \
+  --image-family ubuntu-1604-lts \
+  --image-project=ubuntu-os-cloud \
+  --machine-type=g1-small \
+  --tags puma-server,http-server,https-server \
+  --metadata startup-script-url=gs://reddit-app-scripts/startup_script.sh\
+  --restart-on-failure
+```
 
 ## Как проверить работоспособность:
- https://35.206.154.52
+ http://34.91.233.99:9292
 
 ## PR checklist
- - [] Выставил label с номером домашнего задания
+ - [x] Выставил label с номером домашнего задания
  - [x] Выставил label с темой домашнего задания
