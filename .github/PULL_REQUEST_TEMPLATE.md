@@ -44,10 +44,3 @@ startup_script.sh
   --metadata startup-script-url=gs://reddit-app-scripts/startup_script.sh\
   --restart-on-failure
 ```
-
-## Как проверить работоспособность:
- http://34.91.233.99:9292
-
-## PR checklist
- - [x] Выставил label с номером домашнего задания
- - [x] Выставил label с темой домашнего задания
