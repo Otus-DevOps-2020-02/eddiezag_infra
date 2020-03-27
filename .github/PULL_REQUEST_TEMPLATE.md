@@ -5,7 +5,6 @@
 
 ## В процессе сделано:
 
-#IP for reddit-app
 ```
 testapp_IP = 34.91.233.99
 testapp_port = 9292
