@@ -1,37 +1,46 @@
-# Выполнено ДЗ № 3
+# Выполнено ДЗ № 6
 
  - [x] Основное ДЗ
- - [ ] Задание со *
+ - [x] Задание со *
 
 ## В процессе сделано:
 
-Созданы две виртуальные машины
-
 ```
-bastion_IP = 35.206.154.52
-someinternalhost_IP = 10.132.0.6
-```
-Создал файл в домашней директории /.ssh/conf с содержимым ниже
-
-```
-#For connection from local machine
-host someinternalhost
- HostName 10.132.0.6
- ProxyJump appuser@35.206.154.52:22
- User appuser
- IdentityFile ~/.ssh/appuser
+testapp_IP = 34.91.233.99
+testapp_port = 9292
 ```
 
-На виртуальной машине bastion установил pritunl
-тунель поднялся доступ к someinternalhost получил.
+# Create Firewall Rule from remote console
 
+```
+gcloud compute --project=infra-271209 firewall-rules create default-puma-server --allow=tcp:9292 --target-tags=puma-server --direction=INGRESS --priority=1000 --network=default
+```
+#Added bucket on GCP and script
+
+```
+startup_script.sh
+```
+# Deploy VM instance including script
+```
+/snap/bin/gcloud compute instances create reddit-app\
+  --boot-disk-size=10GB \
+  --image-family ubuntu-1604-lts \
+  --image-project=ubuntu-os-cloud \
+  --machine-type=g1-small \
+  --tags puma-server,http-server,https-server \
+  --metadata startup-script-url=gs://reddit-app-scripts/startup_script.sh\
+  --restart-on-failure
+```
 
 ## Как запустить проект:
- sudo bash setupvpn.sh
-
-## Как проверить работоспособность:
- https://35.206.154.52
-
-## PR checklist
- - [x] Выставил label с номером домашнего задания
- - [x] Выставил label с темой домашнего задания
+# Lanch bellow command to create VM instance
+```
+/snap/bin/gcloud compute instances create reddit-app\
+  --boot-disk-size=10GB \
+  --image-family ubuntu-1604-lts \
+  --image-project=ubuntu-os-cloud \
+  --machine-type=g1-small \
+  --tags puma-server,http-server,https-server \
+  --metadata startup-script-url=gs://reddit-app-scripts/startup_script.sh\
+  --restart-on-failure
+```
