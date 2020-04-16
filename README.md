@@ -61,3 +61,4 @@ Host someinternalhost
 ```
 На виртуальной машине bastion установил pritunl
 тунель поднялся доступ к someinternalhost получил from local machine.
+
